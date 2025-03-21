@@ -1,0 +1,293 @@
+/* Photography Grid System */
+
+/* Base settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container for the entire site */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+/* Row system */
+.row {
+    width: 100%;
+    clear: both;
+    margin-bottom: 25px;
+}
+
+/* Grid columns */
+.one, .two, .three, .four, .five, .six, 
+.seven, .eight, .nine, .ten, .eleven, .twelve {
+    float: left;
+    margin-left: 2%;
+}
+
+.one:first-child, .two:first-child, .three:first-child, .four:first-child,
+.five:first-child, .six:first-child, .seven:first-child, .eight:first-child,
+.nine:first-child, .ten:first-child, .eleven:first-child, .twelve:first-child {
+    margin-left: 0;
+}
+
+.twelve { width: 100%; }
+.eleven { width: 91.5%; }
+.ten { width: 83%; }
+.nine { width: 74.5%; }
+.eight { width: 66%; }
+.seven { width: 57.5%; }
+.six { width: 49%; }
+.five { width: 40.5%; }
+.four { width: 32%; }
+.three { width: 23.5%; }
+.two { width: 15%; }
+.one { width: 6.5%; }
+
+/* Photo items */
+.photo-item {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Image styling */
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Different height options for photo items */
+.height-1 { height: 200px; }
+.height-2 { height: 250px; }
+.height-3 { height: 300px; }
+.height-4 { height: 400px; }
+
+/* Like button styling */
+.photo-like-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.photo-like-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.photo-like-btn.liked i {
+    color: #e74c3c;
+}
+
+/* Main like button section */
+.like-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.like-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.like-button:hover {
+    background-color: #2980b9;
+}
+
+/* Clear fix */
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .one, .two, .three, .four, .five, .six, 
+    .seven, .eight, .nine, .ten, .eleven, .twelve {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    
+    .height-1, .height-2, .height-3, .height-4 {
+        height: 250px; /* All photos same height on mobile */
+    }
+}
+/* Additional CSS for Lightbox Functionality */
+
+/* Styling for the photo items with lightbox */
+.photo-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Make the anchor take up the full image size */
+.photo-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Image styling */
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Show pointer cursor on images */
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Zoom icon overlay on hover */
+.photo-item a::before {
+    display: none;
+}
+
+.photo-item a::after {
+   display:none;
+}
+
+.photo-item:hover a::before,
+.photo-item:hover a::after {
+    opacity: 1;
+}
+
+/* Like button positioned on the image */
+.photo-like-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10; /* Make sure it's above the image overlay */
+}
+
+.photo-like-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.photo-like-btn.liked i {
+    color: #e74c3c;
+}
+
+/* Load more button styling */
+.load-more-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* Success and error message styling */
+.success-message, .error-message {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.success-message {
+    background-color: rgba(46, 204, 113, 0.1);
+    border: 1px solid #2ecc71;
+    color: #27ae60;
+}
+
+.error-message {
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 1px solid #e74c3c;
+    color: #c0392b;
+}
+
+/* Customize lightbox styling */
+.lb-data .lb-caption {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.lb-nav a.lb-prev,
+.lb-nav a.lb-next {
+    opacity: 0.5;
+}
+
+.lb-nav a.lb-prev:hover,
+.lb-nav a.lb-next:hover {
+    opacity: 1;
+}

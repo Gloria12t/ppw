@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Lightbox CSS for fullscreen images -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="row">
+            <div class="twelve">
+                <h1>My Photography Collection</h1>
+            </div>
+        </div>
+        
+        <!-- First Row - Featured Image -->
+        <div class="row">
+            <div class="twelve">
+                <div class="photo-item height-4">
+                    <!-- Lightbox link wrapping the image -->
+                    <a href="photos/photo1.jpeg" data-lightbox="gallery" data-title="Featured Photo">
+                        <img src="photos/photo1.jpeg" alt="Featured Photo">
+                    </a>
+                    <button class="photo-like-btn"><i class="fas fa-heart"></i> <span>0</span></button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Second Row - 3 Images -->
+        <div class="row clearfix">
+            <div class="six">
+                <div class="photo-item height-3">
+                    <a href="photos/photo2.jpeg" data-lightbox="gallery" data-title="Photo 2">
+                        <img src="photos/photo2.jpeg" alt="Photo 2">
+                    </a>
+                    <button class="photo-like-btn"><i class="fas fa-heart"></i> <span>0</span></button>
+                </div>
+            </div>
+            <div class="three">
+                <div class="photo-item height-3">
+                    <a href="photos/photo3.jpeg" data-lightbox="gallery" data-title="Photo 3">
+                        <img src="photos/photo3.jpeg" alt="Photo 3">
+                    </a>
+                    <button class="photo-like-btn"><i class="fas fa-heart"></i> <span>0</span></button>
+                </div>
+            </div>
+            <div class="three">
+                <div class="photo-item height-3">
+                    <a href="photos/photo4.jpeg" data-lightbox="gallery" data-title="Photo 4">
+                        <img src="photos/photo4.jpeg" alt="Photo 4">
+                    </a>
+                    <button class="photo-like-btn"><i class="fas fa-heart"></i> <span>0</span></button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Third Row - 3 Images (different layout) -->
+        <div class="row clearfix">
+            <div class="three">
+                <div class="photo-item height-2">
+                    <a href="photos/photo5.jpeg" data-lightbox="gallery" data-title="Photo 5">
+                        <img src="photos/photo5.jpeg" alt="Photo 5">
+                    </a>
+                    <button class="photo-like-btn"><i class="fas fa-heart"></i> <span>0</span></button>
+                </div>
+            </div>
+            <div class="six">
+                <div class="photo-item height-2">
+                    <a href="photos/photo6.jpeg" data-lightbox="gallery" data-title="Photo 6">
+                        <img src="photos/photo6.jpeg" alt="Photo 6">
+                    </a>
+                    <button class="photo-like-btn"><i class="fas fa-heart"></i> <span>0</span></button>
+                </div>
+            </div>
+            <div class="three">
+                <div class="photo-item height-2">
+                    <a href="photos/photo7.jpeg" data-lightbox="gallery" data-title="Photo 7">
+                        <img src="photos/photo7.jpeg" alt="Photo 7">
+                    </a>
+                    <button class="photo-like-btn"><i class="fas fa-heart"></i> <span>0</span></button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Fourth Row - 4 Equal Images -->
+        <div class="row clearfix">
+            <div class="three">
+                <div class="photo-item height-1">
+                    <a href="photos/photo8.jpeg" data-lightbox="gallery" data-title="Photo 8">
+                        <img src="photos/photo8.jpeg" alt="Photo 8">
+                    </a>
+                    <button class="photo-like-btn"><i class="fas fa-heart"></i> <span>0</span></button>
+                </div>
+            </div>
+            <div class="three">
+                <div class="photo-item height-1">
+                    <a href="photos/photo9.jpeg" data-lightbox="gallery" data-title="Photo 9">
+                        <img src="photos/photo9.jpeg" alt="Photo 9">
+                    </a>
+                    <button class="photo-like-btn"><i class="fas fa-heart"></i> <span>0</span></button>
+                </div>
+            </div>
+            <div class="three">
+                <div class="photo-item height-1">
+                    <a href="photos/photo10.jpeg" data-lightbox="gallery" data-title="Photo 10">
+                        <img src="photos/photo10.jpeg" alt="Photo 10">
+                    </a>
+                    <button class="photo-like-btn"><i class="fas fa-heart"></i> <span>0</span></button>
+                </div>
+            </div>
+            <div class="three">
+                <div class="photo-item height-1">
+                    <a href="photos/photo11.jpeg" data-lightbox="gallery" data-title="Photo 11">
+                        <img src="photos/photo11.jpeg" alt="Photo 11">
+                    </a>
+                    <button class="photo-like-btn"><i class="fas fa-heart"></i> <span>0</span></button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Load More Button -->
+        <div class="row">
+            <div class="twelve" style="text-align: center; margin: 20px 0;">
+                <button id="load-more" class="load-more-btn">
+                    <i class="fas fa-plus"></i> Load More
+                </button>
+            </div>
+        </div>
+        
+        <!-- Contact Form Section -->
+        <div class="row">
+            <div class="six">
+                <section id="contact">
+                    <h2>Contact Me</h2>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        
+                        <!-- Success/Error Messages -->
+                        <div id="formSuccess" class="success-message" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Message sent successfully!</span>
+                        </div>
+                        <div id="formError" class="error-message" style="display: none;">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>Failed to send message. Please try again.</span>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <div class="six">
+                <div class="social-section">
+                    <h2>Follow Me</h2>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <p>Follow me on social media to see my latest photography work and projects.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="row">
+            <div class="twelve">
+                <footer>
+                    <p>&copy; 2025 Photography Project. All rights reserved.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    
+    <!-- Your custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Your JavaScript code...
+        });
+    </script>
+</body>
+</html>
